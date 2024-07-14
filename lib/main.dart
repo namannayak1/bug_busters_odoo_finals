@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:odoo_bug_busters/book_front.dart';
+import 'package:odoo_bug_busters/home_page.dart';
 import 'package:odoo_bug_busters/input_user_details.dart';
 import 'package:odoo_bug_busters/profileperson.dart';
 
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData( 
         primarySwatch: Colors.blue,
       ),
-      home: LibraryProfileScreen(),
+      home: BookLibraryApp(),
     );
   }
 }
