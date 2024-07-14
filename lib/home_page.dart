@@ -64,9 +64,27 @@ class _BookLibraryScreenState extends State<BookLibraryScreen> with SingleTicker
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                // Implement your navigation logic here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NextScreen()),
+                );
+              },
+              child: Text('Next'),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
-      bottomNavigationBar: _buildBottomNavigationBar(),
     );
   }
 
@@ -146,30 +164,6 @@ class _BookLibraryScreenState extends State<BookLibraryScreen> with SingleTicker
       },
     );
   }
-
-  Widget _buildBottomNavigationBar() {
-    return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.library_books),
-          label: 'Library',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Profile',
-        ),
-      ],
-      currentIndex: 1,
-      selectedItemColor: Colors.blue,
-      onTap: (index) {
-        // Handle bottom navigation tap
-      },
-    );
-  }
 }
 
 class BookDetailScreen extends StatelessWidget {
@@ -220,6 +214,20 @@ class BookDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class NextScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Next Screen'),
+      ),
+      body: Center(
+        child: Text('This is the next screen.'),
       ),
     );
   }
